@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Sistema de Punto de Ventas',
+    'title' => 'Aplicación de asistencias',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -31,7 +31,7 @@ return [
     */
 
     'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => 'Ferretería <b>FERCA</b>',
-    'logo_img' => 'https://cdn.pixabay.com/photo/2016/03/31/18/24/screwdriver-1294338_960_720.png',
+    'logo' => '<b>Asistencias</b>App',
+    'logo_img' => 'https://cdn.pixabay.com/photo/2015/12/10/16/39/shield-1086703_1280.png',
     'logo_img_class' => 'brand-image img-circle elevation-3 bg-light',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -256,7 +256,8 @@ return [
     'dashboard_url' => '/admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => 'register',
+    /* 'register_url' => 'register', */
+    'register_url' => false,
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -300,67 +301,18 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
-        ['header' => 'Inventario'],
+        ['header' => 'Servicios'],
         [
-            'text'    => 'Administración',
+            'text'    => 'Pólizas',
             'icon'    => 'fas fa-fw fa-toolbox',
             'submenu' => [
                 [
-                    'text' => 'Proveedores',
-                    'icon' => 'fas fa-people-carry',
-                    'route'  => 'admin.stocktaking.suppliers.index',
+                    'text' => 'Clientes',
+                    'icon' => 'fas fa-user-circle',
+                    'route'  => 'admin.insurances.index',
                     'icon_color' => 'primary',
                 ],
-                [
-                    'text' => 'Medidas',
-                    'icon' => 'fas fa-ruler-horizontal',
-                    'route'  => 'admin.stocktaking.measures.index',
-                    'icon_color' => 'secondary',
-                ],
-                [
-                    'text' => 'Bodegas',
-                    'icon' => 'fas fa-warehouse',
-                    'route'  => 'admin.stocktaking.warehouses.index',
-                    'icon_color' => 'success',
-                ],
-                [
-                    'text' => 'Estaterías',
-                    'icon' => 'fas fa-cubes',
-                    'route'  => 'admin.stocktaking.racks.index',
-                    'icon_color' => 'warning',
-                ],
-                [
-                    'text' => 'Productos',
-                    'icon' => 'fas fa-toolbox',
-                    'route'  => 'admin.stocktaking.products.index',
-                    'icon_color' => 'danger',
-                ],
-                [
-                    'text' => 'Compras',
-                    'icon' => 'fas fa-shopping-basket',
-                    'route'  => 'admin.stocktaking.buys.index',
-                ],
             ],
-        ],
-        ['header' => 'Clientes'],
-        [
-            'text'    => 'Lista de clientes',
-            'icon'    => 'fas fa-fw fa-user-tag',
-            'icon_color' => 'success',
-            'route'  => 'admin.shop.customers.index',
-        ],
-        ['header' => 'Tienda'],
-        [
-            'text'    => 'Venta de productos',
-            'icon'    => 'fas fa-fw fa-store',
-            'route'  => 'admin.shop.sales.products',
-            'icon_color' => 'danger',
-        ],
-        [
-            'text'    => 'Mis ventas',
-            'icon'    => 'fas fa-fw fa-shopping-bag',
-            'route'  => 'admin.shop.sales.index',
-            'icon_color' => 'info',
         ],
     ],
 

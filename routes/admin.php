@@ -2,18 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
-use App\Http\Controllers\admin\SupplierController;
-use App\Http\Controllers\admin\MeasureController;
-use App\Http\Controllers\admin\WarehouseController;
-use App\Http\Controllers\admin\RackController;
-use App\Http\Controllers\admin\ProducController;
-use App\Http\Controllers\admin\BuyController;
-use App\Http\Controllers\admin\CustomerController;
-use App\Http\Controllers\admin\SalesController;
+use App\Http\Controllers\admin\InsuranceController;
+
 
 Route::get('', [HomeController::class, 'index'])->name('admin.index');
 
-Route::resource('suppliers', SupplierController::class)->names('admin.stocktaking.suppliers');
+Route::resource('insurances', InsuranceController::class)->names('admin.insurances');
+
+
+/* Route::resource('suppliers', SupplierController::class)->names('admin.stocktaking.suppliers');
 Route::resource('measures', MeasureController::class)->names('admin.stocktaking.measures');
 Route::resource('warehouses', WarehouseController::class)->names('admin.stocktaking.warehouses');
 Route::resource('racks', RackController::class)->names('admin.stocktaking.racks');
@@ -38,3 +35,5 @@ Route::patch('sales/update_quantity', [SalesController::class, 'update_quantity'
 Route::delete('sales/remove_from_cart', [SalesController::class, 'remove_from_cart'])->name('admin.shop.sales.remove_from_cart');
 Route::delete('sales/cancel_sale', [SalesController::class, 'cancel_sale'])->name('admin.shop.sales.cancel_sale');
 Route::resource('sales', SalesController::class)->names('admin.shop.sales');
+
+ */
