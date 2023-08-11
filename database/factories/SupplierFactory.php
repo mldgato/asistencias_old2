@@ -18,7 +18,7 @@ class SupplierFactory extends Factory
             'company' => $this->faker->unique()->word(20),
             'address' => $this->faker->address(),
             'phone' => $this->faker->phoneNumber(),
-            'seller' => $this->faker->name(),
+            'contact' => $this->faker->name(),
         ];
     }
 }

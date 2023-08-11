@@ -1,6 +1,11 @@
 @extends('adminlte::page')
 
 @section('content_header')
+    <div class="row">
+        <div class="col text-center">
+            <img src="https://segurosgyt.com.gt/o/seguros-theme/images/logoSegundoHeader.png" class="img-fluid">
+        </div>
+    </div>
     <h1>Proveedores <i class="fas fa-people-carry"></i></h1>
 @stop
 
@@ -10,9 +15,9 @@
 
 @section('footer')
     <div class="d-flex justify-content-end">
-        <b>Version</b> 1.3
+        <b>Version</b> 1.0
     </div>
-    <strong>Sistema de Puntos de Venta. Todos los derechos reservados © 2022 - {{ date('Y') }}. </strong>
+    <strong>Aplicación de asistencias - {{ date('Y') }}. </strong>
 @stop
 
 @section('css')
@@ -20,5 +25,5 @@
 @stop
 
 @section('js')
-    
+
 @stop

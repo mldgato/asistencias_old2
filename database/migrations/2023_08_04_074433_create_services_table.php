@@ -13,15 +13,33 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('insurance_id');
 
-            $table->date('date');
-            $table->date('assignmentTime');
+            $table->string('Operator');
+            $table->date('assignmentDate');
+            $table->string('assignmentTime');
             $table->string('serviceType')->enum(['Asixpress', 'Vehículo asegurado', 'Tercero', 'Otro']);
+            
+            $table->unsignedBigInteger('supplier_id');
+            $table->string('expert');
             $table->string('contactTime')->nullable();
             $table->string('endingTime')->nullable();
-            $table->string('address');
-            $table->string('endingTime')->nullable();
 
+
+            $table->string('beneficiary');
+            $table->string('address');
+            $table->string('serviceWork')->enum(['Paso de corriente', 'Abasto de combustible', 'Cambio de llanta', 'Apertura de vehículo']);
+
+            $table->string('pre-existingDamage')->enum(['Puerta derecha', 'Puerta izquierda', 'Neumático']);
+
+            $table->string('maneuveringCost');
+            $table->string('TotalCost');
+
+            $table->longText('notes');
+
+
+            $table->foreign('insurance_id')->references('id')->on('insurances')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

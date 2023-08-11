@@ -9,7 +9,7 @@ use App\Models\Supplier;
 class ShowSuppliers extends Component
 {
     use WithPagination;
-    public $taxnumber, $company, $address, $phone, $seller, $supplier_id;
+    public $taxnumber, $company, $address, $phone, $contact, $supplier_id;
     public $search;
     public $sort = 'company';
     public $direction = 'asc';
@@ -37,7 +37,7 @@ class ShowSuppliers extends Component
             'company' => 'required',
             'address' => 'required',
             'phone' => 'required',
-            'seller' => 'required'
+            'contact' => 'required'
         ];
     }
     /*  protected $rules = [
@@ -72,7 +72,7 @@ class ShowSuppliers extends Component
         if ($this->readyToLoad) {
             $suppliers = Supplier::where('taxnumber', 'LIKE', '%' . $this->search . '%')
                 ->orWhere('company', 'LIKE', '%' . $this->search . '%')
-                ->orWhere('seller', 'LIKE', '%' . $this->search . '%')
+                ->orWhere('contact', 'LIKE', '%' . $this->search . '%')
                 ->orderBy($this->sort, $this->direction)
                 ->paginate($this->cant);
         } else {
@@ -104,7 +104,7 @@ class ShowSuppliers extends Component
             'company',
             'address',
             'phone',
-            'seller'
+            'contact'
         ]);
     }
     public function edit($id)
@@ -115,7 +115,7 @@ class ShowSuppliers extends Component
         $this->company = $supplier->company;
         $this->address = $supplier->address;
         $this->phone = $supplier->phone;
-        $this->seller = $supplier->seller;
+        $this->contact = $supplier->contact;
     }
     public function update()
     {
@@ -127,7 +127,7 @@ class ShowSuppliers extends Component
                 'company' => $this->company,
                 'address' => $this->address,
                 'phone' => $this->phone,
-                'seller' => $this->seller,
+                'contact' => $this->contact,
             ]);
             $this->resetFields();
             $this->emit('closeModalMessaje', 'Información actualizada', 'Proveedor actualizado exitosamente.', 'success', 'UpdateNewSupplier');

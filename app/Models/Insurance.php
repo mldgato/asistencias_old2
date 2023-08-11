@@ -9,4 +9,9 @@ class Insurance extends Model
 {
     use HasFactory;
     protected $guarded = ['id', 'create_at', 'update_at'];
+
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

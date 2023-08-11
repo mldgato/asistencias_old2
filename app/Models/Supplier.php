@@ -9,5 +9,8 @@ class Supplier extends Model
 {
     use HasFactory;
     protected $guarded = ['id', 'create_at', 'update_at'];
-    //Relaciones uno a muchos
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

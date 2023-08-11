@@ -314,6 +314,18 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Lista de proveedores',
+            'icon'    => 'fas fa-people-carry',
+            'submenu' => [
+                [
+                    'text' => 'Información',
+                    'icon' => 'fas fa-user-circle',
+                    'route'  => 'admin.stocktaking.suppliers.index',
+                    'icon_color' => 'primary',
+                ],
+            ],
+        ],
     ],
 
     /*

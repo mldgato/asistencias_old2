@@ -2,6 +2,11 @@
 
 @section('content_header')
     <div class="row">
+        <div class="col text-center">
+            <img src="https://segurosgyt.com.gt/o/seguros-theme/images/logoSegundoHeader.png" class="img-fluid">
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             <h1><i class="fas fa-building"></i> Proveedor: <span class="text-danger">{{ $supplier->company }}</span></h1>
         </div>
@@ -59,12 +64,12 @@
                 </div>
                 <div class="col-sm-12 col-md-9">
                     <div class="form-group">
-                        <label for="seller">Vendedor:</label>
+                        <label for="contact">Contacto:</label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
                             </div>
-                            <div class="form-control">{{ $supplier->seller }}</div>
+                            <div class="form-control">{{ $supplier->contact }}</div>
                         </div>
                     </div>
                 </div>
@@ -88,9 +93,9 @@
 
 @section('footer')
     <div class="d-flex justify-content-end">
-        <b>Version</b> 1.3
+        <b>Version</b> 1.0
     </div>
-    <strong>Sistema de Puntos de Venta. Todos los derechos reservados © 2022 - {{ date('Y') }}. </strong>
+    <strong>Aplicación de asistencias - {{ date('Y') }}. </strong>
 @stop
 
 @section('css')

@@ -90,9 +90,9 @@
                                         <i class="fas fa-sort ml-4"></i>
                                     @endif
                                 </th>
-                                <th style="cursor: pointer" wire:click="order('seller')">
+                                <th style="cursor: pointer" wire:click="order('contact')">
                                     Vendedor
-                                    @if ($sort == 'seller')
+                                    @if ($sort == 'contact')
                                         @if ($direction == 'asc')
                                             <i class="fas fa-sort-up ml-4"></i>
                                         @else
@@ -112,14 +112,14 @@
                                     <td>{{ $supplier->taxnumber }}</td>
                                     <td class="d-none d-sm-table-cell">{{ $supplier->address }}</td>
                                     <td><a href="tel:{{ $supplier->phone }}">{{ $supplier->phone }}</a></td>
-                                    <td>{{ $supplier->seller }}</td>
+                                    <td>{{ $supplier->contact }}</td>
                                     <td class="text-right">
 
                                         <a href="{{ route('admin.stocktaking.suppliers.show', $supplier->id) }}" class="btn btn-success btn-sm mr-2" title="Productos"><i class="fas fa-boxes"></i></a>
 
-                                        <button wire:click="edit({{ $supplier->id }})" data-toggle="modal"
+                                        {{-- <button wire:click="edit({{ $supplier->id }})" data-toggle="modal"
                                             data-target="#UpdateNewSupplier" class="btn btn-primary btn-sm mr-2"
-                                            title="Editar"><i class="fas fa-edit fa-fw"></i></button>
+                                            title="Editar"><i class="fas fa-edit fa-fw"></i></button> --}}
                                     </td>
                                 </tr>
                             @endforeach
