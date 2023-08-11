@@ -13,9 +13,15 @@ class ShowInsurance extends Component
 
     public function render()
     {
+        $insurance = null;
+
         if ($this->search != "") {
-            $insurance = Insurance::where('policy', 'LIKE', '%' . $this->search . '%')
-                ->orWhere('vehiclePlate', 'LIKE', '%' . $this->search . '%')->first();
+            $insurance = Insurance::where('policy', $this->search)
+                ->orWhere('vehiclePlate', $this->search)->first();
+        }
+
+        if ($insurance) {
+            $this->readyToLoad = true;
             $this->policy = $insurance->policy;
             $this->insuredLastName = $insurance->insuredLastName;
             $this->insuredFirstName = $insurance->insuredFirstName;
@@ -26,6 +32,8 @@ class ShowInsurance extends Component
             $this->vehicleColor = $insurance->vehicleColor;
             $this->vehiclePlate = $insurance->vehiclePlate;
         } else {
+            // Si no se encontró el registro, reinicia las propiedades
+            $this->readyToLoad = false;
             $this->policy = "";
             $this->insuredLastName = "";
             $this->insuredFirstName = "";
@@ -36,11 +44,7 @@ class ShowInsurance extends Component
             $this->vehicleColor = "";
             $this->vehiclePlate = "";
         }
-        return view('livewire.admin.insurances.show-insurance');
-    }
 
-    public function loadInsurance()
-    {
-        $this->readyToLoad = true;
+        return view('livewire.admin.insurances.show-insurance');
     }
 }

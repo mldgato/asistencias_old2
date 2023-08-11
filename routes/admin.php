@@ -3,11 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\InsuranceController;
+use App\Http\Controllers\ServiceController;
 
 
 Route::get('', [HomeController::class, 'index'])->name('admin.index');
 
 Route::resource('insurances', InsuranceController::class)->names('admin.insurances');
+
+Route::get('services/newService/{data}', [ServiceController::class, 'newService'])->name('admin.services.newService');
+Route::resource('services', ServiceController::class)->names('admin.services');
 
 
 /* Route::resource('suppliers', SupplierController::class)->names('admin.stocktaking.suppliers');
