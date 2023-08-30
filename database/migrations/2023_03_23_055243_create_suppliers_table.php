@@ -15,12 +15,13 @@ class CreateSuppliersTable extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('taxnumber');
+            $table->string('taxnumber')->unique();
             $table->string('company');
             $table->string('address');
             $table->string('phone');
             $table->string('contact');
             $table->enum('status', [0, 1])->default(1);
+            $table->string('cod')->unique(); // Agregar restricción de unicidad
             $table->timestamps();
         });
     }

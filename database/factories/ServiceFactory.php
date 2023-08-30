@@ -31,7 +31,7 @@ class ServiceFactory extends Factory
             'beneficiary' => $this->faker->name(),
             'address' => $this->faker->address(),
             'serviceWork' => $this->faker->randomElement(['Paso de corriente', 'Abasto de combustible', 'Cambio de llanta', 'Apertura de vehículo']),
-            'pre-existingDamage' => $this->faker->randomElement(['Puerta derecha', 'Puerta izquierda', 'Neumático']),
+            'pre_existingDamage' => $this->faker->randomElement(['Puerta derecha', 'Puerta izquierda', 'Neumático']),
             'maneuveringCost' => $this->faker->numberBetween(1000, 1500),
             'TotalCost' => $this->faker->numberBetween(1000, 1500),
             'notes' => $this->faker->sentence(200),

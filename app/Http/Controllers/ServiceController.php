@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Insurance;
+use App\Models\Service;
+use Illuminate\Contracts\View\View;
 
 class ServiceController extends Controller
 {
@@ -27,15 +29,15 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Service $service)
     {
-        //
+        return View ('admin.services.show', compact('service'));
     }
 
     /**

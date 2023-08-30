@@ -78,8 +78,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     @if ($readyToLoad)
-                        <a href="{{ route('admin.services.newService', $search) }}" class="btn btn-primary"><i class="fas fa-hand-holding-medical"></i> Generar servicio</a>
+                        <a href="{{ route('admin.services.newService', $search) }}" class="btn btn-primary"><i
+                                class="fas fa-hand-holding-medical"></i> Generar servicio</a>
                     @endif
+
+
                 </div>
             </div>
         </div>

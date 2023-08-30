@@ -54,7 +54,7 @@
                                     <td class="align-middle">{{ $product->assignmentDate }}</td>
                                     <td class="align-middle">{{ $product->serviceWork }}</td>
                                     <td class="align-middle text-right">
-                                        <a href="{{ route('admin.stocktaking.buys.add_buy', $product->id) }}"
+                                        <a href="{{ route('admin.services.show', $product->id) }}"
                                             class="btn btn-primary btn-sm mr-2" title="Agregar a la compra"><i
                                                 class="fas fa-cart-plus"></i></a> 
                                     </td>

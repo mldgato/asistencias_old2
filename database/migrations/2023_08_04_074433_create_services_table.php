@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('serviceWork')->enum(['Paso de corriente', 'Abasto de combustible', 'Cambio de llanta', 'Apertura de vehículo']);
 
-            $table->string('pre-existingDamage')->enum(['Puerta derecha', 'Puerta izquierda', 'Neumático']);
+            $table->string('pre_existingDamage')->enum(['Puerta derecha', 'Puerta izquierda', 'Neumático']);
 
             $table->string('maneuveringCost');
             $table->string('TotalCost');
