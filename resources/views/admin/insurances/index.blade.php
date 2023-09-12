@@ -3,7 +3,7 @@
 @section('content_header')
     <div class="row">
         <div class="col-sm-12 text-center">
-            <img src="https://segurosgyt.com.gt/o/seguros-theme/images/logoSegundoHeader.png" class="img-fluid" alt="">
+            <img src="https://notefalla.segurosgyt.com.gt/productos/images/logoSegundoHeader.png" class="img-fluid" alt="">
         </div>
     </div>
     <h1>Pólizas</h1>

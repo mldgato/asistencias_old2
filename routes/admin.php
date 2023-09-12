@@ -12,6 +12,7 @@ Route::get('', [HomeController::class, 'index'])->name('admin.index');
 Route::resource('insurances', InsuranceController::class)->names('admin.insurances');
 
 Route::get('services/newService/{data}', [ServiceController::class, 'newService'])->name('admin.services.newService');
+Route::get('services/newCrane', [ServiceController::class, 'newCrane'])->name('admin.services.newCrane');
 Route::resource('services', ServiceController::class)->names('admin.services');
 
 

@@ -70,4 +70,9 @@ class ServiceController extends Controller
                 ->orWhere('vehiclePlate', $data)->first();
         return view('admin.services.newService', compact('data', 'insurance'));
     }
+
+    public function newCrane()
+    {
+        return view('admin.services.newCrane');
+    }
 }

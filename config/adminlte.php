@@ -312,6 +312,12 @@ return [
                     'route'  => 'admin.insurances.index',
                     'icon_color' => 'primary',
                 ],
+                [
+                    'text' => 'Grúa',
+                    'icon' => 'fas fa-trailer',
+                    'route'  => 'admin.services.newCrane',
+                    'icon_color' => 'danger',
+                ],
             ],
         ],
         [
